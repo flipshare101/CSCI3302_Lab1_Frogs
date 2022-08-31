@@ -1,0 +1,49 @@
+#VRML_SIM R2022a utf8
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.5105622253325893 0.5010783443464304 0.6987465254943843 1.9393789037783464
+  position 0.03488860326873368 -1.9243661026828058 5.665571359931782
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorSize 3 3
+  wallThickness 0.04
+  wallHeight 0.2
+}
+E-puck {
+  hidden linearVelocity_0 0.0532429828376035 0.01636304155361821 8.703256592414854e-09
+  hidden angularVelocity_0 0.0019454602556993423 -0.006335101897037553 0.0938556598593355
+  hidden translation_1 0 0.025999999999999992 0.02
+  hidden rotation_1 0 -1 0 3.330112673589458
+  hidden linearVelocity_1 0.050878801175765515 0.015636181383640493 -1.7537093110385354e-09
+  hidden angularVelocity_1 -0.7784531156891825 2.532844833124511 0.0955718440292994
+  hidden translation_2 0 -0.025999999999999995 0.02
+  hidden rotation_2 0 -1 0 2.4788875783178015
+  hidden linearVelocity_2 0.05554404607457863 0.01706968329594777 -4.1419005780661914e-08
+  hidden angularVelocity_2 -0.85680273309992 2.788175880275216 0.09584267628941544
+  translation 0.19033885270990894 0.029071718118561657 -6.430895777729054e-05
+  rotation 0.0007913474049264394 -0.0027436542207597394 0.99999592305709 0.299923786242679
+}
+DEF BOX_SOLID Solid {
+  translation 1.15 0 0.08
+  children [
+    DEF BOX_OBJ Shape {
+      appearance DEF BOX_NODE PBRAppearance {
+      }
+      geometry Box {
+        size 0.3 0.3 0.2
+      }
+    }
+  ]
+}
+Solid {
+  translation -0.9 0 0.08
+  children [
+    USE BOX_OBJ
+  ]
+  name "solid(1)"
+}
