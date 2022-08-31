@@ -1,0 +1,5 @@
+state move: move until 0.05m from object
+state u_turn: turn robot 180 degrees
+state find_left_wall: rotate clockwise until left sensor is <0.05m
+state move_along_left_wall: move straight as long as left distance sensor is < 0.05m
+state rest: stops
