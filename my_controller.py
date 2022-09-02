@@ -41,7 +41,7 @@ class move_straight:
         rightMotor.setVelocity(3)
     
     def update(self): #condition to change state
-        if psValues[7] < 306 or psValues[0] < 306: # obstical in front
+        if psValues[7] < 34 or psValues[0] < 34: # obstical in front
             if self.step == 0:
                 return u_turn()
             else:
@@ -58,7 +58,7 @@ class u_turn:
         rightMotor.setVelocity(MAX_SPEED)
         
      def update(self):
-         if psValues[3] < 306 or psValues[4] < 306: #obstical behind
+         if psValues[3] < 34 or psValues[4] < 34: #obstical behind
              return move_straight(1)
          else:
              return self
@@ -70,7 +70,7 @@ class find_left_wall:
         rightMotor.setVelocity(1)
         
     def update(self):
-        if psValues[5] < 306:
+        if psValues[5] < 34:
             return move_along_left_wall()
         else:
             return self
@@ -81,7 +81,7 @@ class move_along_left_wall:
        rightMotor.setVelocity(3)
     
    def update(self):
-        if psValues[5] > 306:
+        if psValues[5] > 34:
             return rest()
         else:
             return self
