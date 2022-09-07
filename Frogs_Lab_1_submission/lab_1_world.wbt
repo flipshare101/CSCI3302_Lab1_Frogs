@@ -1,0 +1,40 @@
+#VRML_SIM R2022a utf8
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.43446918148536345 0.42639930841317014 0.7933600444465354 1.8184586121732411
+  position 0.033054249093658616 -2.122428033047985 3.178907865749908
+  follow "rectangle arena"
+  followType "None"
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorSize 3 3
+  wallThickness 0.04
+  wallHeight 0.2
+}
+DEF BOX_SOLID Solid {
+  translation 0.73 0 0.08
+  children [
+    DEF BOX_OBJ Shape {
+      appearance DEF BOX_NODE PBRAppearance {
+      }
+      geometry Box {
+        size 0.3 0.3 0.2
+      }
+    }
+  ]
+}
+Solid {
+  translation -0.57 0 0.08
+  children [
+    USE BOX_OBJ
+  ]
+  name "solid(1)"
+}
+E-puck {
+  controller "lab_1_my_controller"
+}
