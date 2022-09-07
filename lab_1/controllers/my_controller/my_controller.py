@@ -54,7 +54,6 @@ class u_turn:
         print("u_turn")
         
      def update(self):
-         print("PS3: ", psValues[3], "PS4", psValues[4])
          if psValues[3] > 350 and psValues[4] > 350  and (abs(psValues[3] - psValues[4]) < 50): #obstical behind
              return move_straight(1)
          else:
@@ -63,12 +62,12 @@ class u_turn:
 class find_left_wall:
 
     def __init__(self): #turn the robot
-        leftMotor.setVelocity(-1)
-        rightMotor.setVelocity(1)
+        leftMotor.setVelocity(-0.5)
+        rightMotor.setVelocity(0.5)
         print("find_left_wall")
         
     def update(self):
-        if psValues[5] > 100:
+        if psValues[5] > 500:
             return move_along_left_wall()
         else:
             return self
@@ -90,7 +89,8 @@ class rest:
         print('rest')
 
     def update(self):
-        stop_motors()
+        leftMotor.setVelocity(0)
+        rightMotor.setVelocity(0)
         return self
         
 state = move_straight(0)
